@@ -1,0 +1,71 @@
+
+
+
+/* ====== Breadcrumb ====== */
+.blog-color {
+  color: #b38352;
+}
+
+p.text-muted.fw-semibold.mb-4 {
+  font-size: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* ====== Title & Paragraph ====== */
+h2.fw-bold {
+  font-size: 2rem;
+  color: #0d1b2a;
+}
+
+.prg {
+ color: rgb(157, 157, 170) !important;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ====== Blog Cards ====== */
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.card-body h6 {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #6c757d;
+}
+
+.card-body span {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0.5rem 0;
+}
+
+.card-text {
+  font-size: 15px;
+  color: #6c757d;
+}

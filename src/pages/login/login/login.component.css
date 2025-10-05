@@ -1,0 +1,27 @@
+:host {
+  background-color: #F6F6F6;
+}
+
+h1 {
+  color: rgb(9, 15, 65);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.mybtn {
+  background-color: rgba(139, 94, 53, 1);
+  color: white;
+  transition: 0.3s;
+}
+
+.mybtn:hover {
+  background-color: rgb(148, 112, 78);
+}
+
+.right-sec {
+  background-image: url(/images/re.png);
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+}

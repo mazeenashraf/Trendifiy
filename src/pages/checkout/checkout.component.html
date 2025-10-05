@@ -1,0 +1,30 @@
+<section class="bg-white w-100 mx-auto border p-4 shadow rounded-4 my-5" style="max-width:600px;">
+  <div class="container p-4">
+    <h2 class="text-center mb-4 fw-bold text-dark">Checkout</h2>
+
+    <form [formGroup]="checkoutform" (ngSubmit)="checkform()" >
+      <!-- details input -->
+      <div class="form-floating mb-3">
+        <input type="text" formControlName="details"  class="form-control" id="details" placeholder="Enter details">
+        <label for="details">Details</label>
+      </div>
+
+      <!-- input phone -->
+      <div class="form-floating mb-3">
+        <input type="tel" formControlName="phone"  class="form-control" id="phone" placeholder="Enter phone">
+        <label for="phone">Phone</label>
+      </div>
+
+      <!-- input city -->
+      <div class="form-floating mb-4">
+        <input type="text" formControlName="city"  class="form-control" id="city" placeholder="Enter city">
+        <label for="city">City</label>
+      </div>
+
+      <!-- submit button -->
+      <button type="submit" class="btn btn-dark w-100 rounded-pill fw-semibold py-2"   >
+        online payment
+      </button>
+    </form>
+  </div>
+</section>

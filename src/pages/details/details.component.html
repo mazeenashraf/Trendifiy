@@ -1,0 +1,65 @@
+
+<section class="my-4 p-4">
+  <div class="container ">
+
+    <h1 class="text-center fw-bold"> Elegant Evening Gown</h1>
+    <div class="row g-4 align-items-sm-start  mt-3">
+
+      <!-- الصور -->
+      <div class="col-md-5">
+        <div class="mb-3 d-flex justify-content-center">
+  <img [src]="mainimg"
+       class="rounded-4 shadow-sm border border-light-subtle object-fit-contain"
+       style="max-width: 100%; height: 450px;"
+       alt="Main Product">
+</div>
+
+        <div class="row g-2">
+  @for (img of productDetails.images; track $index) {
+    <div class="col-3">
+      <img [src]="img"
+           (click)="mainimg = img"
+           [class.border-primary]="mainimg === img"
+           class="img-thumbnail rounded-3 border-2"
+           style="cursor: pointer;"
+           alt="thumb">
+    </div>
+  }
+</div>
+
+      </div>
+
+      <div class="col-md-7">
+<p class="text-uppercase text-secondary small mb-2">Women / Dresses</p>
+
+        <h2 class="fw-semibold p-2"> {{productDetails.title}} </h2>
+        <h4 class="text-black fw-bold mb-3 p-2">{{productDetails.price |currency : "GBP"}}  </h4>
+        <p class="mb-4 p-2">  {{productDetails.description}} </p>
+
+        <!-- الألوان -->
+        <div class="mb-3">
+          <span class="fw-semibold d-block mb-2">Color</span>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-dark rounded-circle p-3" style="background:red;"></button>
+            <button class="btn btn-outline-dark rounded-circle p-3" style="background:blue;"></button>
+            <button class="btn btn-outline-dark rounded-circle p-3" style="background:black;"></button>
+          </div>
+        </div>
+
+        <!-- المقاسات -->
+        <div class="mb-4">
+          <span class="fw-semibold d-block mb-2">Size</span>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary">S</button>
+            <button class="btn btn-dark">M</button>
+            <button class="btn btn-outline-secondary">L</button>
+            <button class="btn btn-outline-secondary">XL</button>
+          </div>
+        </div>
+
+        <!-- زرار الكارت -->
+<button class="btn btn-lg btn-dark rounded-pill w-100 w-md-auto px-5" (click)="addcart(productDetails.id)"  >Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>

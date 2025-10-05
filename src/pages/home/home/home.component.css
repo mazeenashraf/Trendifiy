@@ -1,0 +1,162 @@
+.first-sec{
+  background-image: linear-gradient(rgba(0,0,0,0.6)),  url(/images/unsplash_jrQv0161nNM.png);
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+.first-sec p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-transform: capitalize;
+  color: white;
+  padding-top:20px ;
+  margin-top: 10px;
+  /* word-spacing: 2px; */
+}
+.main-color{
+    background-color: rgba(139, 94, 53, 1);
+    color: white;
+}
+.sec-color{
+  color:rgba(139, 94, 53, 1) !important;
+}
+.mychev{
+  color: rgba(139, 94, 53, 1);
+  font-size: 25px;
+}
+
+.main-img{
+  background-image: linear-gradient( rgba(0,0,0,0.6) ) , url(/images/home-slider.jpg);
+  height: 50vh;
+  background-position: center center;
+  background-size: cover;
+}
+
+.custom-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #a0522d ; /* البوردر الأبيض */
+  border-radius: 50%;     /* يخليها دايرة */
+  background-color: #fff ;
+  transition: all 0.3s ease;
+}
+
+.custom-btn i {
+  color: #a0522d ;  /* الأيقونة أبيض */
+  font-size: 20px;
+}
+
+.custom-btn span:hover {
+  background-color: #a0522d !important; /* اللون البني عند hover */
+  border-color: #a0522d !important;
+}
+
+.custom-btn span:hover i {
+  color: #fff; /* الأيقونة تفضل أبيض */
+}
+
+
+.prodcuts h4 {
+  color: rgb(139, 94, 53);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+}
+.prodcuts h2{
+  color: rgb(9, 15, 65);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  padding-top: 15px;
+}
+h2{
+    color: rgb(9, 15, 65);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  padding-top: 15px;
+
+}
+h4{
+
+  color: rgb(139, 94, 53);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* طبقة غامقة عشان النص يبان */
+}
+.myhero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("/pexels-photo-9226518.jpeg") center center / cover no-repeat;
+  background-position: center center ;
+  background-size: cover;
+  min-height: 50vh; /* لتقص الصورة من الأعلى فقط */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.myhero h2 {
+  font-size: 2.5rem;
+}
+
+.myhero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.text-brown {
+  color: #8b6a3e; /* بني */
+}
+
+.text-darkblue {
+  color: #0c1248; /* أزرق غامق */
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #f8f5f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px; /* حجم الأيقونة */
+  color: #8b6a3e; /* لون الأيقونة */
+}
+
+.card {
+  padding: 2rem; /* تكبير الكارت */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 18px; /* تدوير الحواف */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.card h5 {
+  font-size: 1.35rem;
+  margin-top: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+}

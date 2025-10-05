@@ -1,0 +1,280 @@
+<section class="first-sec p-4">
+  <div class="container p-4 mt-3">
+    <div class="mt-3 pt-3">
+    <h1 class="mt-3 text-white pt-3">Elevate Your Home with <br>
+Stylish Furniture</h1>
+
+<p>Explore a range of high-quality, affordable furniture designed to <br> transform any room. Discover the perfect blend of style, comfort,<br> and functionality for your space.</p>
+    </div>
+    <button class="btn main-color px-5 py-2 rounded-pill"> shop now</button>
+    <div>
+    <img src="/images/download (3).svg" alt="ourphoto">
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- main slider  -->
+
+<section class="mt-3 p-3">
+  <owl-carousel-o [options]="customOptions">
+
+    @for (cat of allCategories; track cat._id) {
+      <ng-template carouselSlide>
+        <div class="d-flex flex-column align-items-center">
+          <div class="rounded-circle overflow-hidden border border-3  d-flex justify-content-center align-items-center"
+               style="width: 200px; height: 200px;">
+            <img [src]="cat.image"
+                 [alt]="cat.slug"
+                 class="img-fluid object-fit-contain"
+                 style="max-width: 100%; max-height: 100%;">
+          </div>
+          <h5 class="mt-2 text-center">{{ cat.name }}</h5>
+        </div>
+      </ng-template>
+    }
+
+  </owl-carousel-o>
+</section>
+
+
+
+<!-- static slider -->
+<section class="">
+  <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="main-img pt-3 mt-3 p-4">
+    <div class="main-info pt-4 ">
+      <h2 class="fs-1 text-white fw-bold"> Upgrade your Style </h2>
+
+    </div>
+     <p class="pt-3 mt-3 text-white fw-bold fs-5"> up to 50% off on all clothing and accessories! </p>
+
+  </div>
+    </div>
+    <div class="carousel-item">
+      <div class="main-img pt-3 mt-3 p-4">
+    <div class="main-info pt-4 ">
+      <h2 class="fs-1 text-white fw-bold"> Upgrade your Style </h2>
+
+    </div>
+     <p class="pt-3 mt-3 text-white fw-bold fs-5"> up to 50% off on all clothing and accessories! </p>
+
+  </div>
+    </div>
+    <div class="carousel-item">
+      <div class="main-img pt-3 mt-3 p-4">
+    <div class="main-info pt-4 ">
+      <h2 class="fs-1 text-white fw-bold"> Upgrade your Style </h2>
+
+    </div>
+     <p class="pt-3 mt-3 text-white fw-bold fs-5"> up to 50% off on all clothing and accessories! </p>
+
+  </div>
+    </div>
+  </div>
+<div class="mt-4 pt-4">
+<!-- Previous Button -->
+<button class="carousel-control-prev custom-btn" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+  <span>
+    <i class="fa-solid fa-chevron-left"></i>
+  </span>
+</button>
+
+<!-- Next Button -->
+<button class="carousel-control-next custom-btn" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+  <span>
+    <i class="fa-solid fa-chevron-right"></i>
+  </span>
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- products section -->
+<section class="mt-3 prodcuts">
+      <input type="search"  class="mx-auto form-control w-50 my-2" placeholder="search by name ..." [(ngModel)]="term"   >
+
+  <div class="container p-4">
+    <h4 class="text-center mt-3 pt-3">Flash Sale</h4>
+    <h2 class="text-center">Grab Them Before They're Gone!</h2>
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3" >
+@for (prod of visibleProducts | search: term; track prod.id.slice(0,14) ) {
+  <div class="col" [routerLink]="['/details' , prod._id]">
+
+    <div   class="card shadow-sm rounded-3 p-2 text-start h-100" style="border: 1px solid #eee;">
+      <!-- صورة المنتج -->
+      <div class="position-relative">
+        <img class="card-img-top rounded-3 img-fluid" [src]="prod.imageCover" [alt]="prod.title" />
+        <!-- زر الـ favorite -->
+        <span class="position-absolute top-0 end-0 m-2">
+          <i class="fa-regular fa-heart fs-4" style="color: rgb(139, 94, 53);"></i>
+        </span>
+      </div>
+
+      <!-- تفاصيل المنتج -->
+      <div class="card-body px-2 pt-3">
+          <h6 class="card-title mb-2 text-truncate">
+          {{ prod.title }}
+        </h6>
+        <h6 class="card-title mb-2 text-truncate">
+          {{ prod.description.split(" ", 2).join(" ") }}
+        </h6>
+
+
+
+        <div class="d-flex gap-2 align-items-center mb-2">
+          <i class="fa-solid fa-star" style="color:#FFD43B;"></i>
+          <small class="text-muted"> {{prod.ratingsAverage}} ({{prod.ratingsQuantity}}) </small>
+        </div>
+
+        <!-- السعر -->
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <span class="fw-bold sec-color"> {{prod.price | currency : "GBP"}}  </span><br />
+          </div>
+          <button class="btn btn-sm btn-light rounded-circle main-color border">
+            <i class="fa-solid fa-plus text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+}
+
+<div class="text-center  mt-4" *ngIf="visibleCount < allproducts.length">
+  <button class="btn  main-color px-4" (click)="loadMore()">Load More</button>
+</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- new collcetion code -->
+ <section class="mt-3 p-3">
+  <div class="container">
+    <h4 class="text-capitalize sec-color text-center ">New Collection</h4>
+    <h2>Check the new Collection</h2>
+   <div class="container my-5">
+   <div class="row g-3">
+
+    <!-- العمود الشمال (Shoes) -->
+    <div class="col-12 col-md-6">
+      <div class="position-relative overflow-hidden rounded-3" style="height: 700px;">
+        <img src="/images/shoes.png" alt="Shoes" class="w-100 h-100 object-fit-cover rounded-4">
+        <div class="overlay"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h2 class="fw-bold text-white fs-1">Shoes</h2>
+          <p class="fs-5">UP TO 50% OFF</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- العمود اليمين (Bags + Accessories) -->
+    <div class="col-12 col-md-6 d-flex flex-column gap-3">
+
+      <!-- Bags -->
+      <div class="position-relative overflow-hidden rounded-3 flex-fill" style="height: 350px;">
+        <img src="/images/collection2.webp" alt="Bags" class="w-100 h-100 object-fit-cover rounded-4">
+        <div class="overlay"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h2 class="fw-bold text-white fs-2">Bags</h2>
+          <p class="fs-6">UP TO 50% OFF</p>
+        </div>
+      </div>
+
+      <!-- Accessories -->
+      <div class="position-relative overflow-hidden rounded-3 flex-fill" style="height: 350px;">
+        <img src="/images/collection3.webp" alt="Accessories" class="w-100 h-100 object-fit-cover rounded-4">
+        <div class="overlay"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h2 class="fw-bold text-white fs-2">Accessories</h2>
+          <p class="fs-6">UP TO 50% OFF</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+ </section>
+
+<!-- Hero Section -->
+<section class="myhero d-flex align-items-center justify-content-center text-center">
+  <div class="container">
+    <h2 class="fw-bold text-white mb-3">Discover Fashion That Speaks To You.</h2>
+    <p class="text-white-50 mb-4">
+      Explore a range of high-quality, affordable furniture designed to transform any room.
+      Discover the perfect blend of style, comfort, and functionality for your space.
+    </p>
+    <a href="#" class="btn btn-outline-light rounded-pill px-4">See All</a>
+  </div>
+</section>
+
+<!-- services sec -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+      <!-- Title -->
+      <h3 class="text-brown fw-bold">Services</h3>
+      <h2 class="fw-bold mb-5 text-darkblue">
+        Benefits when using <br> our services
+      </h2>
+
+      <!-- Cards Row -->
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="icon-circle mb-3 mx-auto">
+<i class="fas fa-lightbulb"></i>
+
+            </div>
+            <h5 class="fw-bold text-darkblue">Inspiration</h5>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur. Est vel risus hendrerit laoreet purus malesuada dignissim.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="icon-circle mb-3 mx-auto">
+              <i class="fas fa-headset"></i>
+
+            </div>
+            <h5 class="fw-bold text-darkblue">24/7 Customer Services</h5>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur. Est vel risus hendrerit laoreet purus malesuada dignissim.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="icon-circle mb-3 mx-auto">
+              <i class="fas fa-truck"></i>
+
+            </div>
+            <h5 class="fw-bold text-darkblue">Express Shipping</h5>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur. Est vel risus hendrerit laoreet purus malesuada dignissim.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

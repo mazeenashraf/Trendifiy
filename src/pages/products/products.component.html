@@ -1,0 +1,56 @@
+<section class="mt-3 prodcuts">
+      <input type="search"  class="mx-auto form-control w-50 " placeholder="search by name ..." [(ngModel)]="term"   >
+
+  <div class="container p-4">
+    <h4 class="text-center mt-3 pt-3">Flash Sale</h4>
+    <h2 class="text-center">Grab Them Before They're Gone!</h2>
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3" >
+@for (prod of allproducts | search: term; track prod.id ) {
+  <div class="col" [routerLink]="['/details' , prod._id]">
+
+    <div   class="card shadow-sm rounded-3 p-2 text-start h-100" style="border: 1px solid #eee;">
+      <!-- صورة المنتج -->
+      <div class="position-relative">
+        <img class="card-img-top rounded-3 img-fluid" [src]="prod.imageCover" [alt]="prod.title" />
+        <!-- زر الـ favorite -->
+        <span class="position-absolute top-0 end-0 m-2">
+          <i class="fa-regular fa-heart fs-4" style="color: rgb(139, 94, 53);"></i>
+        </span>
+      </div>
+
+      <!-- تفاصيل المنتج -->
+      <div class="card-body px-2 pt-3">
+          <h6 class="card-title mb-2 text-truncate">
+          {{ prod.title }}
+        </h6>
+        <h6 class="card-title mb-2 text-truncate">
+          {{ prod.description.split(" ", 2).join(" ") }}
+        </h6>
+
+
+
+        <div class="d-flex gap-2 align-items-center mb-2">
+          <i class="fa-solid fa-star" style="color:#FFD43B;"></i>
+          <small class="text-muted"> {{prod.ratingsAverage}} ({{prod.ratingsQuantity}}) </small>
+        </div>
+
+        <!-- السعر -->
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <span class="fw-bold sec-color"> {{prod.price | currency : "GBP"}}  </span><br />
+          </div>
+          <button class="btn btn-sm btn-light rounded-circle main-color border">
+            <i class="fa-solid fa-plus text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+}
+
+
+    </div>
+  </div>
+</section>

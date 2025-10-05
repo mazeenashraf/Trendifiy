@@ -1,0 +1,66 @@
+<nav class="navbar mynav navbar-expand-lg p-3">
+  <div class="container">
+    <a class="navbar-brand main-color fw-bold " routerLink="/home">Trendify</a>
+    <button class="navbar-toggler text-white bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white "></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      @if (IsLogin) {
+ <ul class="navbar-nav mx-auto    mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white " routerLink="/home" routerLinkActive="  fw-semi-bold " aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " routerLink="/Services"  routerLinkActive="  fw-semi-bold " aria-current="page">Brands</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white  " routerLink="/products"  routerLinkActive=" fw-semi-bold " aria-current="page">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " routerLink="/Aboutus"  routerLinkActive=" fw-semi-bold "  aria-current="page">About us</a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link  text-white " routerLink="/blog"  routerLinkActive=" fw-semi-bold " aria-current="page">Blog</a>
+        </li>
+
+      </ul>
+      }
+
+      <ul class="navbar-nav ms-auto    mb-2 mb-lg-0">
+        @if (IsLogin) {
+ <li class="nav-item">
+          <a class="nav-link text-white  "  routerLinkActive="text-black  fw-semi-bold " aria-current="page"><i class="fa-solid  fs-5 fa-magnifying-glass"></i></a>
+        </li>
+ <li class="nav-item">
+          <a class="nav-link text-white  "  routerLinkActive="text-black  fw-semi-bold " routerLink="/cart" aria-current="page"><i class="fa-solid fs-5 fa-cart-shopping"></i></a>
+        </li>
+ <li class="nav-item">
+          <a class="nav-link text-white  " routerLinkActive="text-black  fw-semi-bold "  routerLink="/profile" aria-current="page"><i class="fa-solid  fs-5 fa-user"></i></a>
+        </li>
+
+        }
+
+
+        @if (!IsLogin) {
+ <li class="nav-item">
+          <a class="nav-link text-white  "  routerLinkActive="  fw-semi-bold " routerLink="/login" aria-current="page">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white  "  routerLinkActive="  fw-semi-bold " routerLink="register" aria-current="page">register</a>
+        </li>
+        }
+        @else {
+
+        <li class="nav-item">
+          <a class="nav-link  text-white  " role="button" (click)="logoutsubmit()" aria-current="page">LogOut</a>
+        </li>
+
+        }
+
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

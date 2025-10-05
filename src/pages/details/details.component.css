@@ -1,0 +1,13 @@
+.my-ok-btn {
+  background-color: black !important; /* الخلفية سوداء */
+  color: white !important;            /* الكلمة بيضاء */
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.my-ok-btn:hover {
+  background-color: #333 !important; /* أفتح شوية لما تعمل hover */
+}

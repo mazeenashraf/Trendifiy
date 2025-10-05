@@ -1,0 +1,22 @@
+ .main-color{
+  color: rgba(139, 94, 53, 1);
+}
+.mynav ul li a{
+  padding-left: 35px;
+transition: all 0.2s ease-in-out;
+}
+.mynav ul li a:hover{
+  transform:scale(1.1)
+
+}
+ .mynav{
+  background-color: #39332D;
+ }
+.mynav h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 75px;
+  text-transform: capitalize;
+
+  color: white;
+}

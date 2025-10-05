@@ -1,0 +1,60 @@
+<section>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Left side (form) -->
+      <div class="col-12 col-md-6 d-flex align-items-center justify-content-center py-5">
+        <div class="w-75">
+          <h1>Create Account</h1>
+          <p class="text-muted">Create a new account</p>
+
+
+          <form [formGroup]="registerForm" (ngSubmit)="registersubmit()">
+
+<div class="form-floating mb-3">
+  <input formControlName="name" type="text" class="form-control" id="name"placeholder="name@example.com" >
+  <label for="name">User Name</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="email" formControlName="email" class="form-control" id="email" placeholder="name@example.com">
+  <label for="email">Email address</label>
+</div>
+
+
+<div class="form-floating mb-3">
+  <input type="password" formControlName="password" class="form-control" id="password" placeholder="name@example.com" >
+  <label for="password">password</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="password" formControlName="rePassword" class="form-control" id="rePassword" placeholder="name@example.com">
+  <label for="rePassword">rePassword</label>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="name@example.com" >
+  <label for="phone">phone</label>
+</div>
+
+          <button type="submit" class="btn mybtn my-3 w-100 text-capitalize rounded-pill">Sign Up</button>
+
+          </form>
+          <h5 class="text-center">Already have an account ? <a class="link-primary text-capitalize text-decoration-none" routerLink="/login"> login </a> </h5>
+        </div>
+      </div>
+
+      <!-- Right side (image / info) -->
+      <div class="col-md-6 d-none d-md-block right-sec">
+        <div class="d-flex justify-content-center align-items-center h-100 text-center text-white">
+          <div>
+            <h2 class="fw-bold">Welcome to Trendify</h2>
+            <p class="my-2">Discover the latest trends,</p>
+            <p class="my-2">Express your unique style.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
